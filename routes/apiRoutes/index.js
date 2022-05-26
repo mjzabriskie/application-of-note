@@ -10,14 +10,20 @@ router.get('/notes', (req, res) => {
     res.json(results);
 });
 
-// router.get('/notes/:id', (req, res) => {
-//     const result = findById(req.params.id, notes);
-//     if (result) {
-//         res.json(result);
-//     } else {
-//         res.send(404);
-//     }
-// });
+router.delete('/notes/:id', (req, res) => {
+
+    const result = req.params.id;
+    if (result) {
+        const filteredArray = notes.filter(note => note.id !== result);
+        fs.writeFileSync(
+            path.join(__dirname, '../../db/db.json'),
+            JSON.stringify({notes: filteredArray}, null, 2)
+            );
+        res.json(notes);
+    } else {
+        res.send(404);
+    }
+});
 
 router.post('/notes', (req, res) => {
     let note = req.body;
@@ -37,10 +43,5 @@ router.post('/notes', (req, res) => {
         res.json(notes);
     }
 });
-
-// function findById(id, notesArray) {
-//     const result = notesArray.filter(note => note.id === id)[0];
-//     return result;
-// }
 
 module.exports = router;
