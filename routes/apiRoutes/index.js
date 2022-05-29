@@ -19,7 +19,8 @@ router.delete('/notes/:id', (req, res) => {
             path.join(__dirname, '../../db/db.json'),
             JSON.stringify({notes: filteredArray}, null, 2)
             );
-        res.json(notes);
+            console.log(filteredArray);
+        res.json(filteredArray);
     } else {
         res.send(404);
     }
