@@ -2,8 +2,8 @@
   "notes": [
     {
       "title": "Welcome",
-      "text": "Welcome to Note Taker, the exclusive web app for taking notes! \n\nInstructions:\n(1) Click on a note in the left-side column to read its contents\n(2) To add a new note,\n          (a) Enter a title and note contents if no existing note is being read\n          (b) If an existing note is currently being read, click the \" + \" button\n(3) To delete a note, simply click on the garbage can icon next to the note you want to delete.\n\nEnjoy a premium note-taking experience!",
+      "text": "Welcome to Note Taker, the exclusive web app for taking notes! \n\nInstructions:\n(1) Click on a note in the left-side column to read its contents\n(2) To add a new note,\n          (a) Enter a title and note contents if no existing note is being read\n          (b) If an existing note is currently being read, click the \" + \" button\n(3) Delete functionality not available at this time.\n\nEnjoy a premium note-taking experience!",
       "id": "nR-GHKb39fVIwgCK29Y9T"
-    }d
+    }
   ]
 }
