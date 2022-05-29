@@ -5,10 +5,12 @@ const app = express();
 const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
 
+//middleware
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 app.use(express.static('public'));
 
+//api routes
 app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 

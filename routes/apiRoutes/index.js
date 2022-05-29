@@ -10,8 +10,8 @@ router.get('/notes', (req, res) => {
     res.json(results);
 });
 
+//api endpoint to delete specific note from db.json
 router.delete('/notes/:id', (req, res) => {
-
     const result = req.params.id;
     if (result) {
         const filteredArray = notes.filter(note => note.id !== result);
@@ -19,13 +19,13 @@ router.delete('/notes/:id', (req, res) => {
             path.join(__dirname, '../../db/db.json'),
             JSON.stringify({notes: filteredArray}, null, 2)
             );
-            console.log(filteredArray);
         res.json(filteredArray);
     } else {
         res.send(404);
     }
 });
 
+//api route to add note to db.json
 router.post('/notes', (req, res) => {
     let note = req.body;
 
@@ -35,7 +35,7 @@ router.post('/notes', (req, res) => {
     //if data in note is missing, send 400 error back
     if (!note) {
         res.status(400).send('Add all information and try again.');
-    } else {
+    } else {//pushes new note to notes object for live view, and updates the db file
         notes.push(note);
         fs.writeFileSync(
             path.join(__dirname, '../../db/db.json'),
